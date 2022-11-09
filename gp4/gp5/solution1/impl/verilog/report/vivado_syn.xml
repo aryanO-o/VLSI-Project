@@ -1,0 +1,140 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2022.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>10.000</TargetClockPeriod>
+  <AchievedClockPeriod>7.458</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>7.458</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>7.458</CP_SYNTH>
+  <CP_TARGET>10.000</CP_TARGET>
+  <SLACK_FINAL>2.542</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>2.542</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>2.542</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>2.542</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>0</BRAM>
+    <CLB>0</CLB>
+    <DSP>25</DSP>
+    <FF>1512</FF>
+    <LATCH>0</LATCH>
+    <LUT>1209</LUT>
+    <SRL>48</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>280</BRAM>
+    <CLB>0</CLB>
+    <DSP>220</DSP>
+    <FF>106400</FF>
+    <LUT>53200</LUT>
+    <URAM>0</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="hand_num_nn" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="6">dadd_64ns_64ns_64_7_full_dsp_1_U4 dmul_64ns_64ns_64_7_max_dsp_1_U5 dmul_64ns_64ns_64_7_max_dsp_1_U6 fpext_32ns_64_2_no_dsp_1_U2 fpext_32ns_64_2_no_dsp_1_U3 fptrunc_64ns_32_2_no_dsp_1_U1</SubModules>
+    <Resources DSP="25" FF="1512" LUT="1209" LogicLUT="1161" SRL="48"/>
+    <LocalResources FF="367" LUT="17" LogicLUT="17"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dadd_64ns_64ns_64_7_full_dsp_1_U4" BINDMODULE="hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1">
+    <Resources DSP="3" FF="572" LUT="774" LogicLUT="762" SRL="12"/>
+    <LocalResources FF="128" LUT="128" LogicLUT="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dmul_64ns_64ns_64_7_max_dsp_1_U5" BINDMODULE="hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1">
+    <Resources DSP="11" FF="230" LUT="108" LogicLUT="90" SRL="18"/>
+    <LocalResources FF="78" LUT="7" LogicLUT="7"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dmul_64ns_64ns_64_7_max_dsp_1_U6" BINDMODULE="hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1">
+    <Resources DSP="11" FF="215" LUT="100" LogicLUT="82" SRL="18"/>
+    <LocalResources FF="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/fpext_32ns_64_2_no_dsp_1_U2" BINDMODULE="hand_num_nn_fpext_32ns_64_2_no_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_fpext_32ns_64_2_no_dsp_1">
+    <Resources FF="32" LUT="99" LogicLUT="99"/>
+    <LocalResources FF="32" LUT="32" LogicLUT="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/fpext_32ns_64_2_no_dsp_1_U3" BINDMODULE="hand_num_nn_fpext_32ns_64_2_no_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_fpext_32ns_64_2_no_dsp_1">
+    <Resources FF="32" LUT="67" LogicLUT="67"/>
+    <LocalResources FF="32"/>
+  </RtlModule>
+  <RtlModule CELL="inst/fptrunc_64ns_32_2_no_dsp_1_U1" BINDMODULE="hand_num_nn_fptrunc_64ns_32_2_no_dsp_1" DEPTH="1" FILE_NAME="hand_num_nn.v" ORIG_REF_NAME="hand_num_nn_fptrunc_64ns_32_2_no_dsp_1">
+    <Resources FF="64" LUT="44" LogicLUT="44"/>
+    <LocalResources FF="64"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="7.483" DATAPATH_LOGIC_DELAY="4.801" DATAPATH_NET_DELAY="2.682" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/D" LOGIC_LEVELS="7" MAX_FANOUT="7" SLACK="2.542" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.402" DATAPATH_LOGIC_DELAY="4.720" DATAPATH_NET_DELAY="2.682" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/D" LOGIC_LEVELS="7" MAX_FANOUT="7" SLACK="2.623" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.378" DATAPATH_LOGIC_DELAY="4.696" DATAPATH_NET_DELAY="2.682" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]/D" LOGIC_LEVELS="7" MAX_FANOUT="7" SLACK="2.647" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.366" DATAPATH_LOGIC_DELAY="4.684" DATAPATH_NET_DELAY="2.682" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/D" LOGIC_LEVELS="6" MAX_FANOUT="7" SLACK="2.659" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.360" DATAPATH_LOGIC_DELAY="4.678" DATAPATH_NET_DELAY="2.682" ENDPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]/D" LOGIC_LEVELS="6" MAX_FANOUT="7" SLACK="2.665" STARTPOINT_PIN="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="1"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/hand_num_nn_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/hand_num_nn_failfast_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/hand_num_nn_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/hand_num_nn_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/hand_num_nn_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/hand_num_nn_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

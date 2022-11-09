@@ -1,0 +1,28 @@
+INFO: [HLS 200-10] Running 'E:/Vivado/Vitis_HLS/2022.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Dushy' on host 'msi' (Windows NT_amd64 version 6.2) on Wed Nov 09 20:25:03 +0530 2022
+INFO: [HLS 200-10] In directory 'C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master'
+Sourcing Tcl script 'C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project gp4 
+INFO: [HLS 200-10] Opening project 'C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4'.
+INFO: [HLS 200-1510] Running: set_top hand_num_nn 
+INFO: [HLS 200-1510] Running: add_files core.cpp 
+INFO: [HLS 200-10] Adding design file 'core.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb test_hand_nn.cpp 
+INFO: [HLS 200-10] Adding test bench file 'test_hand_nn.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+ERROR: [HLS 200-1023] Part '-' is not installed.
+command 'create_platform' returned error code
+    while executing
+"source C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/solution1/csim.tcl"
+    invoked from within
+"hls::main C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 1.104 seconds; peak allocated memory: 73.801 MB.

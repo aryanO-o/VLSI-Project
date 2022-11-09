@@ -1,0 +1,582 @@
+
+
+================================================================
+== Vitis HLS Report for 'hand_num_nn'
+================================================================
+* Date:           Wed Nov  9 20:50:03 2022
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        gp5
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.297 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       46|       46|  0.460 us|  0.460 us|   47|   47|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 47
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%input_r_addr = getelementptr i32 %input_r, i64 0, i64 0" [../core.cpp:23]   --->   Operation 48 'getelementptr' 'input_r_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [2/2] (2.32ns)   --->   "%input_r_load = load i3 %input_r_addr" [../core.cpp:23]   --->   Operation 49 'load' 'input_r_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%input_r_addr_1 = getelementptr i32 %input_r, i64 0, i64 1" [../core.cpp:23]   --->   Operation 50 'getelementptr' 'input_r_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [2/2] (2.32ns)   --->   "%input_r_load_1 = load i3 %input_r_addr_1" [../core.cpp:23]   --->   Operation 51 'load' 'input_r_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+
+State 2 <SV = 1> <Delay = 6.75>
+ST_2 : Operation 52 [1/2] (2.32ns)   --->   "%input_r_load = load i3 %input_r_addr" [../core.cpp:23]   --->   Operation 52 'load' 'input_r_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%bitcast_ln23 = bitcast i32 %input_r_load" [../core.cpp:23]   --->   Operation 53 'bitcast' 'bitcast_ln23' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [2/2] (4.43ns)   --->   "%conv = fpext i32 %bitcast_ln23" [../core.cpp:23]   --->   Operation 54 'fpext' 'conv' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_2 : Operation 55 [1/2] (2.32ns)   --->   "%input_r_load_1 = load i3 %input_r_addr_1" [../core.cpp:23]   --->   Operation 55 'load' 'input_r_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%bitcast_ln23_1 = bitcast i32 %input_r_load_1" [../core.cpp:23]   --->   Operation 56 'bitcast' 'bitcast_ln23_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [2/2] (4.43ns)   --->   "%conv2 = fpext i32 %bitcast_ln23_1" [../core.cpp:23]   --->   Operation 57 'fpext' 'conv2' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 4.43>
+ST_3 : Operation 58 [1/2] (4.43ns)   --->   "%conv = fpext i32 %bitcast_ln23" [../core.cpp:23]   --->   Operation 58 'fpext' 'conv' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_3 : Operation 59 [1/2] (4.43ns)   --->   "%conv2 = fpext i32 %bitcast_ln23_1" [../core.cpp:23]   --->   Operation 59 'fpext' 'conv2' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 6.71>
+ST_4 : Operation 60 [7/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 60 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 61 [7/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 61 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.71>
+ST_5 : Operation 62 [6/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 62 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 63 [6/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 63 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.71>
+ST_6 : Operation 64 [5/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 64 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 65 [5/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 65 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.71>
+ST_7 : Operation 66 [4/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 66 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 67 [4/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 67 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 6.71>
+ST_8 : Operation 68 [3/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 68 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 69 [3/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 69 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%input_r_addr_2 = getelementptr i32 %input_r, i64 0, i64 2" [../core.cpp:23]   --->   Operation 70 'getelementptr' 'input_r_addr_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 71 [2/2] (2.32ns)   --->   "%input_r_load_2 = load i3 %input_r_addr_2" [../core.cpp:23]   --->   Operation 71 'load' 'input_r_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+
+State 9 <SV = 8> <Delay = 6.75>
+ST_9 : Operation 72 [2/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 72 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 73 [2/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 73 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 74 [1/2] (2.32ns)   --->   "%input_r_load_2 = load i3 %input_r_addr_2" [../core.cpp:23]   --->   Operation 74 'load' 'input_r_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_9 : Operation 75 [1/1] (0.00ns)   --->   "%bitcast_ln23_2 = bitcast i32 %input_r_load_2" [../core.cpp:23]   --->   Operation 75 'bitcast' 'bitcast_ln23_2' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 76 [2/2] (4.43ns)   --->   "%conv5 = fpext i32 %bitcast_ln23_2" [../core.cpp:23]   --->   Operation 76 'fpext' 'conv5' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 6.71>
+ST_10 : Operation 77 [1/7] (6.71ns)   --->   "%mul = dmul i64 %conv, i64 0.15169" [../core.cpp:23]   --->   Operation 77 'dmul' 'mul' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 78 [1/7] (6.71ns)   --->   "%mul3 = dmul i64 %conv2, i64 0.984664" [../core.cpp:23]   --->   Operation 78 'dmul' 'mul3' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 79 [1/2] (4.43ns)   --->   "%conv5 = fpext i32 %bitcast_ln23_2" [../core.cpp:23]   --->   Operation 79 'fpext' 'conv5' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 7.29>
+ST_11 : Operation 80 [7/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 80 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 81 [7/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 81 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 7.29>
+ST_12 : Operation 82 [6/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 82 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 83 [6/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 83 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.29>
+ST_13 : Operation 84 [5/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 84 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 85 [5/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 85 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.29>
+ST_14 : Operation 86 [4/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 86 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 87 [4/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 87 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 7.29>
+ST_15 : Operation 88 [3/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 88 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 89 [3/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 89 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 90 [1/1] (0.00ns)   --->   "%input_r_addr_3 = getelementptr i32 %input_r, i64 0, i64 3" [../core.cpp:23]   --->   Operation 90 'getelementptr' 'input_r_addr_3' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 91 [2/2] (2.32ns)   --->   "%input_r_load_3 = load i3 %input_r_addr_3" [../core.cpp:23]   --->   Operation 91 'load' 'input_r_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+
+State 16 <SV = 15> <Delay = 7.29>
+ST_16 : Operation 92 [2/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 92 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 93 [2/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 93 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 94 [1/2] (2.32ns)   --->   "%input_r_load_3 = load i3 %input_r_addr_3" [../core.cpp:23]   --->   Operation 94 'load' 'input_r_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_16 : Operation 95 [1/1] (0.00ns)   --->   "%bitcast_ln23_3 = bitcast i32 %input_r_load_3" [../core.cpp:23]   --->   Operation 95 'bitcast' 'bitcast_ln23_3' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 96 [2/2] (4.43ns)   --->   "%conv9 = fpext i32 %bitcast_ln23_3" [../core.cpp:23]   --->   Operation 96 'fpext' 'conv9' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 7.29>
+ST_17 : Operation 97 [1/7] (7.29ns)   --->   "%add = dadd i64 %mul, i64 %mul3" [../core.cpp:23]   --->   Operation 97 'dadd' 'add' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 98 [1/7] (6.71ns)   --->   "%mul6 = dmul i64 %conv5, i64 -0.199729" [../core.cpp:23]   --->   Operation 98 'dmul' 'mul6' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 99 [1/2] (4.43ns)   --->   "%conv9 = fpext i32 %bitcast_ln23_3" [../core.cpp:23]   --->   Operation 99 'fpext' 'conv9' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 7.29>
+ST_18 : Operation 100 [7/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 100 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 101 [7/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 101 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 7.29>
+ST_19 : Operation 102 [6/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 102 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 103 [6/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 103 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 7.29>
+ST_20 : Operation 104 [5/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 104 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 105 [5/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 105 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 7.29>
+ST_21 : Operation 106 [4/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 106 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 107 [4/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 107 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 7.29>
+ST_22 : Operation 108 [3/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 108 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 109 [3/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 109 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 110 [1/1] (0.00ns)   --->   "%input_r_addr_4 = getelementptr i32 %input_r, i64 0, i64 4" [../core.cpp:23]   --->   Operation 110 'getelementptr' 'input_r_addr_4' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 111 [2/2] (2.32ns)   --->   "%input_r_load_4 = load i3 %input_r_addr_4" [../core.cpp:23]   --->   Operation 111 'load' 'input_r_load_4' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+
+State 23 <SV = 22> <Delay = 7.29>
+ST_23 : Operation 112 [2/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 112 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 113 [2/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 113 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 114 [1/2] (2.32ns)   --->   "%input_r_load_4 = load i3 %input_r_addr_4" [../core.cpp:23]   --->   Operation 114 'load' 'input_r_load_4' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 5> <RAM>
+ST_23 : Operation 115 [1/1] (0.00ns)   --->   "%bitcast_ln23_4 = bitcast i32 %input_r_load_4" [../core.cpp:23]   --->   Operation 115 'bitcast' 'bitcast_ln23_4' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 116 [2/2] (4.43ns)   --->   "%conv1 = fpext i32 %bitcast_ln23_4" [../core.cpp:23]   --->   Operation 116 'fpext' 'conv1' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 7.29>
+ST_24 : Operation 117 [1/7] (7.29ns)   --->   "%add7 = dadd i64 %add, i64 %mul6" [../core.cpp:23]   --->   Operation 117 'dadd' 'add7' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 118 [1/7] (6.71ns)   --->   "%mul1 = dmul i64 %conv9, i64 0.0520163" [../core.cpp:23]   --->   Operation 118 'dmul' 'mul1' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 119 [1/2] (4.43ns)   --->   "%conv1 = fpext i32 %bitcast_ln23_4" [../core.cpp:23]   --->   Operation 119 'fpext' 'conv1' <Predicate = true> <Delay = 4.43> <CoreInst = "Float2Double">   --->   Core 64 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.43> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 7.29>
+ST_25 : Operation 120 [7/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 120 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 121 [7/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 121 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 7.29>
+ST_26 : Operation 122 [6/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 122 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 123 [6/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 123 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 7.29>
+ST_27 : Operation 124 [5/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 124 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 125 [5/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 125 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 7.29>
+ST_28 : Operation 126 [4/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 126 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 127 [4/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 127 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 7.29>
+ST_29 : Operation 128 [3/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 128 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 129 [3/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 129 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 7.29>
+ST_30 : Operation 130 [2/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 130 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 131 [2/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 131 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 7.29>
+ST_31 : Operation 132 [1/7] (7.29ns)   --->   "%add1 = dadd i64 %add7, i64 %mul1" [../core.cpp:23]   --->   Operation 132 'dadd' 'add1' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 133 [1/7] (6.71ns)   --->   "%mul2 = dmul i64 %conv1, i64 -0.306772" [../core.cpp:23]   --->   Operation 133 'dmul' 'mul2' <Predicate = true> <Delay = 6.71> <CoreInst = "DMul_maxdsp">   --->   Core 49 'DMul_maxdsp' <Latency = 6> <II = 1> <Delay = 6.71> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 7.29>
+ST_32 : Operation 134 [7/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 134 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 7.29>
+ST_33 : Operation 135 [6/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 135 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 7.29>
+ST_34 : Operation 136 [5/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 136 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 7.29>
+ST_35 : Operation 137 [4/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 137 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 7.29>
+ST_36 : Operation 138 [3/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 138 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 7.29>
+ST_37 : Operation 139 [2/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 139 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 7.29>
+ST_38 : Operation 140 [1/7] (7.29ns)   --->   "%add2 = dadd i64 %add1, i64 %mul2" [../core.cpp:23]   --->   Operation 140 'dadd' 'add2' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 7.29>
+ST_39 : Operation 141 [7/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 141 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 7.29>
+ST_40 : Operation 142 [6/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 142 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 7.29>
+ST_41 : Operation 143 [5/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 143 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 7.29>
+ST_42 : Operation 144 [4/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 144 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 7.29>
+ST_43 : Operation 145 [3/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 145 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 7.29>
+ST_44 : Operation 146 [2/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 146 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 7.29>
+ST_45 : Operation 147 [1/7] (7.29ns)   --->   "%sub = dadd i64 %add2, i64 -1.61533" [../core.cpp:23]   --->   Operation 147 'dadd' 'sub' <Predicate = true> <Delay = 7.29> <CoreInst = "DAddSub_fulldsp">   --->   Core 37 'DAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 7.29> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 5.20>
+ST_46 : Operation 148 [2/2] (5.20ns)   --->   "%ans = fptrunc i64 %sub" [../core.cpp:23]   --->   Operation 148 'fptrunc' 'ans' <Predicate = true> <Delay = 5.20> <CoreInst = "Double2Float">   --->   Core 67 'Double2Float' <Latency = 1> <II = 1> <Delay = 5.20> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 5.20>
+ST_47 : Operation 149 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 149 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 150 [1/1] (0.00ns)   --->   "%spectopmodule_ln10 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [../core.cpp:10]   --->   Operation 150 'spectopmodule' 'spectopmodule_ln10' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 151 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_r, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 151 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 152 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_r"   --->   Operation 152 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 153 [1/2] (5.20ns)   --->   "%ans = fptrunc i64 %sub" [../core.cpp:23]   --->   Operation 153 'fptrunc' 'ans' <Predicate = true> <Delay = 5.20> <CoreInst = "Double2Float">   --->   Core 67 'Double2Float' <Latency = 1> <II = 1> <Delay = 5.20> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_47 : Operation 154 [1/1] (0.00ns)   --->   "%ret_ln25 = ret i32 %ans" [../core.cpp:25]   --->   Operation 154 'ret' 'ret_ln25' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('input_r_addr', ../core.cpp:23) [6]  (0 ns)
+	'load' operation ('input_r_load', ../core.cpp:23) on array 'input_r' [7]  (2.32 ns)
+
+ <State 2>: 6.76ns
+The critical path consists of the following:
+	'load' operation ('input_r_load', ../core.cpp:23) on array 'input_r' [7]  (2.32 ns)
+	'fpext' operation ('conv', ../core.cpp:23) [9]  (4.44 ns)
+
+ <State 3>: 4.44ns
+The critical path consists of the following:
+	'fpext' operation ('conv', ../core.cpp:23) [9]  (4.44 ns)
+
+ <State 4>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 5>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 6>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 7>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 8>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 9>: 6.76ns
+The critical path consists of the following:
+	'load' operation ('input_r_load_2', ../core.cpp:23) on array 'input_r' [18]  (2.32 ns)
+	'fpext' operation ('conv5', ../core.cpp:23) [20]  (4.44 ns)
+
+ <State 10>: 6.72ns
+The critical path consists of the following:
+	'dmul' operation ('mul', ../core.cpp:23) [10]  (6.72 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 17>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add', ../core.cpp:23) [16]  (7.3 ns)
+
+ <State 18>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 19>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 20>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 21>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 22>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 23>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 24>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add7', ../core.cpp:23) [22]  (7.3 ns)
+
+ <State 25>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 26>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 27>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 28>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 29>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 30>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 31>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add1', ../core.cpp:23) [28]  (7.3 ns)
+
+ <State 32>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 33>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 34>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 35>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 36>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 37>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 38>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('add2', ../core.cpp:23) [34]  (7.3 ns)
+
+ <State 39>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 40>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 41>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 42>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 43>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 44>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 45>: 7.3ns
+The critical path consists of the following:
+	'dadd' operation ('sub', ../core.cpp:23) [35]  (7.3 ns)
+
+ <State 46>: 5.2ns
+The critical path consists of the following:
+	'fptrunc' operation ('ans', ../core.cpp:23) [36]  (5.2 ns)
+
+ <State 47>: 5.2ns
+The critical path consists of the following:
+	'fptrunc' operation ('ans', ../core.cpp:23) [36]  (5.2 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

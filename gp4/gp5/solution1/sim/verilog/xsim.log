@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# xsim v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  9 20:51:29 2022
+# Process ID: 12596
+# Current directory: C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/gp5/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/hand_num_nn/xsim_script.tcl}
+# Log file: C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/gp5/solution1/sim/verilog/xsim.log
+# Journal file: C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/gp5/solution1/sim/verilog\xsim.jou
+# Running On: MSI, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16991 MB
+#-----------------------------------------------------------
+source xsim.dir/hand_num_nn/xsim_script.tcl
+# xsim {hand_num_nn} -autoloadwcfg -tclbatch {hand_num_nn.tcl}
+Time resolution is 1 ps
+source hand_num_nn.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 225 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 275 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/i_no_versal_es1_workaround/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 295 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 345 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/i_no_versal_es1_workaround/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 365 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 415 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/i_no_versal_es1_workaround/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 011XX11 with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 435 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/mult/OP/i_non_prim/R_AND_R/logic/R_AND_R/dsp48_e1/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 485 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/i_no_versal_es1_workaround/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 555 ns  Iteration: 8  Process: /apatb_hand_num_nn_top/AESL_inst_hand_num_nn/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/logic_speed/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/i_no_versal_es1_workaround/dsp48e1_add/DSP48E1_ADD/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: E:/Vivado/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [100.00%] @ "605000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 665 ns : File "C:/Users/Dushy/OneDrive/Desktop/GRADE_PREDICTOR-master/gp4/gp5/solution1/sim/verilog/hand_num_nn.autotb.v" Line 260
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Nov  9 20:51:31 2022...

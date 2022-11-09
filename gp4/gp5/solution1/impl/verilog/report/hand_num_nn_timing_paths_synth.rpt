@@ -1,0 +1,608 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Wed Nov  9 20:56:25 2022
+| Host         : MSI running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 10 -file ./report/hand_num_nn_timing_paths_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+-----------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.542ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.483ns  (logic 4.801ns (64.155%)  route 2.682ns (35.845%))
+  Logic Levels:           7  (CARRY4=4 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.119    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     8.456 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     8.456    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[9]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.456    
+  -------------------------------------------------------------------
+                         slack                                  2.542    
+
+Slack (MET) :             2.623ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.402ns  (logic 4.720ns (63.763%)  route 2.682ns (36.237%))
+  Logic Levels:           7  (CARRY4=4 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.119    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.256     8.375 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     8.375    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[10]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.375    
+  -------------------------------------------------------------------
+                         slack                                  2.623    
+
+Slack (MET) :             2.647ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.378ns  (logic 4.696ns (63.645%)  route 2.682ns (36.355%))
+  Logic Levels:           7  (CARRY4=4 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.119    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.232     8.351 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     8.351    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[8]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[8]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.351    
+  -------------------------------------------------------------------
+                         slack                                  2.647    
+
+Slack (MET) :             2.659ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.366ns  (logic 4.684ns (63.586%)  route 2.682ns (36.414%))
+  Logic Levels:           6  (CARRY4=3 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     8.339 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     8.339    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[5]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.339    
+  -------------------------------------------------------------------
+                         slack                                  2.659    
+
+Slack (MET) :             2.665ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.360ns  (logic 4.678ns (63.556%)  route 2.682ns (36.444%))
+  Logic Levels:           6  (CARRY4=3 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     8.333 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     8.333    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[7]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[7]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.333    
+  -------------------------------------------------------------------
+                         slack                                  2.665    
+
+Slack (MET) :             2.740ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 4.603ns (63.181%)  route 2.682ns (36.819%))
+  Logic Levels:           6  (CARRY4=3 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.256     8.258 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     8.258    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[6]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[6]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[6]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.258    
+  -------------------------------------------------------------------
+                         slack                                  2.740    
+
+Slack (MET) :             2.764ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.261ns  (logic 4.579ns (63.059%)  route 2.682ns (36.941%))
+  Logic Levels:           6  (CARRY4=3 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.993 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.002    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.232     8.234 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     8.234    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[4]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[4]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[4]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.234    
+  -------------------------------------------------------------------
+                         slack                                  2.764    
+
+Slack (MET) :             2.910ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.115ns  (logic 4.442ns (62.428%)  route 2.673ns (37.572%))
+  Logic Levels:           5  (CARRY4=2 DSP48E1=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, unplaced)         0.741     2.232    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+                         LUT3 (Prop_lut3_I0_O)        0.295     2.527 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, unplaced)         0.333     2.860    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_0
+                         CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.591     3.451 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, unplaced)         0.800     4.251    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+                         DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.557 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, unplaced)         0.800     7.356    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/P[0]
+                         LUT6 (Prop_lut6_I2_O)        0.124     7.480 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, unplaced)         0.000     7.480    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+                         CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.608     8.088 r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     8.088    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[3]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_7_full_dsp_1_U4/hand_num_nn_dadd_64ns_64ns_64_7_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -8.088    
+  -------------------------------------------------------------------
+                         slack                                  2.910    
+
+Slack (MET) :             2.932ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/PCIN[0]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.584ns  (logic 4.729ns (84.693%)  route 0.855ns (15.307%))
+  Logic Levels:           1  (DSP48E1=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/Q
+                         net (fo=4, unplaced)         0.800     2.291    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/s_axis_a_tdata[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[0])
+                                                      4.211     6.502 r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/i_no_versal_es1_workaround.DSP/PCOUT[0]
+                         net (fo=1, unplaced)         0.055     6.557    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP_0[0]
+                         DSP48E1                                      r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/PCIN[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/aclk
+                         DSP48E1                                      r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         DSP48E1 (Setup_dsp48e1_CLK_PCIN[0])
+                                                     -1.400     9.489    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          9.489    
+                         arrival time                          -6.557    
+  -------------------------------------------------------------------
+                         slack                                  2.932    
+
+Slack (MET) :             2.932ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/PCIN[10]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.584ns  (logic 4.729ns (84.693%)  route 0.855ns (15.307%))
+  Logic Levels:           1  (DSP48E1=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/din0_buf1_reg[16]/Q
+                         net (fo=4, unplaced)         0.800     2.291    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/s_axis_a_tdata[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[10])
+                                                      4.211     6.502 r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/i_no_versal_es1_workaround.DSP/PCOUT[10]
+                         net (fo=1, unplaced)         0.055     6.557    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP_0[10]
+                         DSP48E1                                      r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/PCIN[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1584, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/aclk
+                         DSP48E1                                      r  bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         DSP48E1 (Setup_dsp48e1_CLK_PCIN[10])
+                                                     -1.400     9.489    bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_7_max_dsp_1_U5/hand_num_nn_dmul_64ns_64ns_64_7_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          9.489    
+                         arrival time                          -6.557    
+  -------------------------------------------------------------------
+                         slack                                  2.932    
+
+
+
+
